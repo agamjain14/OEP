@@ -1,5 +1,6 @@
 package main.java.com.model;
 
+
 import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -27,10 +28,16 @@ public class OepCourse implements Serializable {
 	private String courseName;
 
 	@Column(name="COURSE_NO_QUESTIONS")
+
 	private int courseNoQuestions;
 
 	@Column(name="COURSE_PASSING_SCORE")
 	private int coursePassingScore;
+
+	private BigDecimal courseNoQuestions;
+
+	@Column(name="COURSE_PASSING_SCORE")
+	private BigDecimal coursePassingScore;
 
 	//bi-directional many-to-one association to OepQuestion
 	@OneToMany(mappedBy="oepCourse")
@@ -80,6 +87,20 @@ public class OepCourse implements Serializable {
 	}
 
 	public void setCoursePassingScore(int coursePassingScore) {
+	public BigDecimal getCourseNoQuestions() {
+		return this.courseNoQuestions;
+	}
+
+	public void setCourseNoQuestions(BigDecimal courseNoQuestions) {
+		this.courseNoQuestions = courseNoQuestions;
+	}
+
+	public BigDecimal getCoursePassingScore() {
+		return this.coursePassingScore;
+	}
+
+	public void setCoursePassingScore(BigDecimal coursePassingScore) {
+
 		this.coursePassingScore = coursePassingScore;
 	}
 
