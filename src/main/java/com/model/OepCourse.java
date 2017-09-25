@@ -1,4 +1,5 @@
-package com.model;
+package main.java.com.model;
+
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -27,6 +28,12 @@ public class OepCourse implements Serializable {
 	private String courseName;
 
 	@Column(name="COURSE_NO_QUESTIONS")
+
+	private int courseNoQuestions;
+
+	@Column(name="COURSE_PASSING_SCORE")
+	private int coursePassingScore;
+
 	private BigDecimal courseNoQuestions;
 
 	@Column(name="COURSE_PASSING_SCORE")
@@ -67,6 +74,19 @@ public class OepCourse implements Serializable {
 		this.courseName = courseName;
 	}
 
+	public int getCourseNoQuestions() {
+		return this.courseNoQuestions;
+	}
+
+	public void setCourseNoQuestions(int courseNoQuestions) {
+		this.courseNoQuestions = courseNoQuestions;
+	}
+
+	public int getCoursePassingScore() {
+		return this.coursePassingScore;
+	}
+
+	public void setCoursePassingScore(int coursePassingScore) {
 	public BigDecimal getCourseNoQuestions() {
 		return this.courseNoQuestions;
 	}
@@ -80,6 +100,7 @@ public class OepCourse implements Serializable {
 	}
 
 	public void setCoursePassingScore(BigDecimal coursePassingScore) {
+
 		this.coursePassingScore = coursePassingScore;
 	}
 
