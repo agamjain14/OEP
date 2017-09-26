@@ -1,0 +1,132 @@
+package com.model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+
+/**
+ * The persistent class for the OEP_QUESTIONS database table.
+ * 
+ */
+@Entity
+@Table(name="OEP_QUESTIONS")
+@NamedQuery(name="OepQuestion.findAll", query="SELECT o FROM OepQuestion o")
+public class OepQuestion implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="QUESTION_ID")
+	private long questionId;
+
+	@Column(name="QUESTION_ANSWER")
+	private String questionAnswer;
+
+	@Column(name="QUESTION_DESCRIPTION")
+	private String questionDescription;
+
+	@Column(name="QUESTION_OPTIONA")
+	private String questionOptiona;
+
+	@Column(name="QUESTION_OPTIONB")
+	private String questionOptionb;
+	
+	@Column(name="QUESTION_OPTIONC")
+	private String questionOptionc;
+	
+	@Column(name="QUESTION_OPTIOND")
+	private String questionOptiond;
+	
+	@Column(name="QUESTION_STATUS")
+	private String questionStatus;
+	
+	public void setQuestionStatus(String questionStatus) {
+		this.questionStatus = questionStatus;
+	}
+
+	public String getQuestionOptiona() {
+		return questionOptiona;
+	}
+
+	public void setQuestionOptiona(String questionOptiona) {
+		this.questionOptiona = questionOptiona;
+	}
+
+	public String getQuestionOptionb() {
+		return questionOptionb;
+	}
+
+	public void setQuestionOptionb(String questionOptionb) {
+		this.questionOptionb = questionOptionb;
+	}
+
+	public String getQuestionOptionc() {
+		return questionOptionc;
+	}
+
+	public void setQuestionOptionc(String questionOptionc) {
+		this.questionOptionc = questionOptionc;
+	}
+
+	public String getQuestionOptiond() {
+		return questionOptiond;
+	}
+
+	public void setQuestionOptiond(String questionOptiond) {
+		this.questionOptiond = questionOptiond;
+	}
+
+	
+
+
+	
+	public String getQuestionStatus() {
+		return questionStatus;
+	}
+
+
+
+
+
+	//bi-directional many-to-one association to OepCourse
+	@ManyToOne
+	@JoinColumn(name="COURSE_ID")
+	private OepCourse oepCourse;
+
+	public OepQuestion() {
+	}
+
+	public long getQuestionId() {
+		return this.questionId;
+	}
+
+	public void setQuestionId(long questionId) {
+		this.questionId = questionId;
+	}
+
+	public String getQuestionAnswer() {
+		return this.questionAnswer;
+	}
+
+	public void setQuestionAnswer(String questionAnswer) {
+		this.questionAnswer = questionAnswer;
+	}
+
+	public String getQuestionDescription() {
+		return this.questionDescription;
+	}
+
+	public void setQuestionDescription(String questionDescription) {
+		this.questionDescription = questionDescription;
+	}
+
+	
+
+	public OepCourse getOepCourse() {
+		return this.oepCourse;
+	}
+
+	public void setOepCourse(OepCourse oepCourse) {
+		this.oepCourse = oepCourse;
+	}
+
+}
