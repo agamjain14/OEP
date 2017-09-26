@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Upload</title>
+			<link rel="stylesheet" type="text/css" href="upload.css">
+	</head>
+
+	<body>
+		<div id="page">
+			<header>
+				<div id="header">	
+					<div id="logo">
+						<h1><a href="#">UPLOAD<span>Question</span>Bank</a></h1>
+					</div>
+					
+					<div class="clr"></div>
+				</div>
+			</header>
+			
+			<div class="feature">
+				<div class="feature-inner">
+				<h1>TEST</h1>
+				</div>
+			</div>
+	
+			<div id="content">				
+			<div id ="content-inner">
+			
+			<br>
+			
+            <form method="post" action="uploadFile" enctype="multipart/form-data">
+                Select file to upload:
+                <input type="file" id="test" name="uploadFile" />
+                <br/><br/>
+
+				<div>
+				<button onclick="myFunction()" value="Upload" id="upload">UPLOAD</button>
+				</div>
+<script>
+function myFunction() {
+	var y=document.getElementById("test").value;
+	var res = y.substring(12);
+    var x = "C:/Users/Administrator/Desktop/"+res;
+	if(x.endsWith(".xls")||x.endsWith(".xlsx"))
+	{
+	document.write(x);
+	}
+	else 
+	{
+	document.write("invalid file")
+	}
+}
+</script>
+				<br><br><br>
+            </form>
+       
+			
+			
+			
+			
+			
+			
+			</div>
+		</div>
+	</body>
+</html>
