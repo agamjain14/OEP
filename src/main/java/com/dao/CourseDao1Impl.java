@@ -10,7 +10,7 @@ import model.OepCourse;
 import model.OepUser;
 import util.MyUtil;
 
-public class CourseDaoImpl implements CourseDao {
+public class CourseDao1Impl implements CourseDao1 {
 
 	private Session session;
 	@Override

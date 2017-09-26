@@ -2,7 +2,7 @@ package dao;
 
 import model.OepCourse;
 
-public interface CourseDao {
+public interface CourseDao1 {
 	
 	public void createCourse(OepCourse course);
 	public void insert();

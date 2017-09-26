@@ -1,10 +1,10 @@
 package dao;
 
-public class CourseDaoTest {
+public class CourseDao1Test {
 
 	public static void main(String[] args) {
 		
-		CourseDao cd = new CourseDaoImpl();
+		CourseDao1 cd = new CourseDao1Impl();
 		cd.insert();
 		
 		//cd.updateCourse(1,"java++");
